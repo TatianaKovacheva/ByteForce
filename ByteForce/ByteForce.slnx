@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="ByteForce/ByteForce.vcxproj" />
+  <Project Path="ByteForce/ByteForce.vcxproj" Id="3c3126ad-333e-45d7-8347-1ad4ec955715" />
 </Solution>
