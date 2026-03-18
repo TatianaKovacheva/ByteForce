@@ -15,6 +15,14 @@ void waitForEnter() {
     cin.get();
 }
 
+int categoryToIndex(string category) {
+    for (int i = 0; i < 4; i++) {
+        if (categoryNames[i] == category) {
+            return i;
+        }
+    }
+    return -1;
+}
 
 int readIntInRange(int minValue, int maxValue) {
     while (true) {

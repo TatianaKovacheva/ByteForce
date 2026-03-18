@@ -12,7 +12,6 @@ using namespace std;
 
 
 void initializeContent();
-// Clears the console screen before showing a new UI view.
 void clearScreen();
 
 
