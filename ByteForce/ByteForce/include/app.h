@@ -10,6 +10,7 @@
 
 using namespace std;
 
+extern string categoryNames[4];
 
 void initializeContent();
 void clearScreen();

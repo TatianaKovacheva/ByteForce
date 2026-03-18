@@ -1,4 +1,4 @@
-#include "../includes/app.h"
+#include "../include/app.h"
 
 string categoryNames[4] = { "Linear Equations", "Expressions", "Geometry", "Statistics" };
 int categoryQuota[4] = { 6, 5, 5, 4 };
