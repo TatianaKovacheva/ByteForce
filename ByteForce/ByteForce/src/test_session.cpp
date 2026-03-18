@@ -25,3 +25,46 @@ void shuffleIntArray(int arr[], int n) {
         arr[j] = temp;
     }
 }
+
+void generateTestQuestionIndexes(int selectedIndexes[]) {
+    int categoryIndexes[4][8];
+    int categoryCounts[4] = { 0, 0, 0, 0 };
+
+    for (int i = 0; i < 32; i++) {
+        int c = categoryToIndex(questionCategories[i]);
+        if (c >= 0 && categoryCounts[c] < 8) {
+            categoryIndexes[c][categoryCounts[c]] = i;
+            categoryCounts[c]++;
+        }
+    }
+
+    int writePos = 0;
+    for (int c = 0; c < 4; c++) {
+        shuffleIntArray(categoryIndexes[c], categoryCounts[c]);
+        for (int k = 0; k < categoryQuota[c]; k++) {
+            selectedIndexes[writePos++] = categoryIndexes[c][k];
+        }
+    }
+
+    shuffleIntArray(selectedIndexes, 20);
+}
+
+bool canStartNewAttempt() {
+    if (attemptCount >= 200) {
+        cout << "\nMaximum stored attempts reached. Restart the program to reset quota.\n";
+        waitEnterInTest();
+        return false;
+    }
+    return true;
+}
+void resetAttemptRow(int index) {
+    attemptScore[index] = 0;
+    attemptMaxScore[index] = 0;
+    attemptPercent[index] = 0.0;
+    attemptGrade[index] = 2;
+
+    for (int c = 0; c < 4; c++) {
+        attemptCategoryObtained[index][c] = 0;
+        attemptCategoryMax[index][c] = 0;
+    }
+}
