@@ -68,3 +68,61 @@ void resetAttemptRow(int index) {
         attemptCategoryMax[index][c] = 0;
     }
 }
+
+int askSingleQuestion(int questionIndex, int orderIndex) {
+    clearScreen();
+    printTestLine();
+    cout << "Question " << (orderIndex + 1) << " of 20\n";
+    cout << "Category: " << questionCategories[questionIndex] << " | Points: " << questionPoints[questionIndex] << "\n";
+    cout << questionTexts[questionIndex] << "\n";
+
+    for (int j = 0; j < 4; j++) {
+        cout << "  " << (j + 1) << ") " << questionOptions[questionIndex][j] << "\n";
+    }
+
+    cout << "Your answer [1-4]: ";
+    return readIntInRange(1, 4) - 1;
+}
+
+void processSingleAnswer(int attemptIndex, int questionIndex, int answerIndex) {
+    int categoryIdx = categoryToIndex(questionCategories[questionIndex]);
+
+    attemptMaxScore[attemptIndex] += questionPoints[questionIndex];
+    if (categoryIdx >= 0) {
+        attemptCategoryMax[attemptIndex][categoryIdx] += questionPoints[questionIndex];
+    }
+
+    if (answerIndex == questionCorrectIndex[questionIndex]) {
+        attemptScore[attemptIndex] += questionPoints[questionIndex];
+        if (categoryIdx >= 0) {
+            attemptCategoryObtained[attemptIndex][categoryIdx] += questionPoints[questionIndex];
+        }
+        cout << "Correct!\n";
+    }
+    else {
+        cout << "Wrong. Correct answer: " << questionOptions[questionIndex][questionCorrectIndex[questionIndex]] << "\n";
+    }
+}
+
+void finalizeAttemptResult(int attemptIndex) {
+    if (attemptMaxScore[attemptIndex] == 0) {
+        attemptPercent[attemptIndex] = 0.0;
+    }
+    else {
+        attemptPercent[attemptIndex] = 100.0 * (double)attemptScore[attemptIndex] / (double)attemptMaxScore[attemptIndex];
+    }
+
+    attemptGrade[attemptIndex] = gradeFromPercent(attemptPercent[attemptIndex]);
+}
+
+void printAttemptResult(int attemptIndex) {
+    clearScreen();
+    printTestLine();
+    cout << "TEST RESULT\n";
+    printTestLine();
+    cout << "Student: " << attemptStudentName[attemptIndex] << "\n";
+    cout << "Score: " << attemptScore[attemptIndex] << " / " << attemptMaxScore[attemptIndex] << "\n";
+    cout << fixed << setprecision(2);
+    cout << "Percent: " << attemptPercent[attemptIndex] << "%\n";
+    cout << "Grade (2-6): " << attemptGrade[attemptIndex] << "\n";
+}
