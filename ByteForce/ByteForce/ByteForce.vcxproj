@@ -131,6 +131,7 @@
     <ClCompile Include="src\app.cpp" />
     <ClCompile Include="src\mainMenu.cpp" />
     <ClCompile Include="src\data.cpp" />
+    <ClCompile Include="src\statistics.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\app.h" />
