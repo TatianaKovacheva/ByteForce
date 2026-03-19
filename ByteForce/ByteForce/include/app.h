@@ -36,4 +36,13 @@ void runSingleTestAttempt();
 void takeGeneratedTest();
 void showStatistics();
 
+extern string attemptStudentName[200];
+extern int attemptScore[200];
+extern int attemptMaxScore[200];
+extern double attemptPercent[200];
+extern int attemptGrade[200];
+extern int attemptCategoryObtained[200][4];
+extern int attemptCategoryMax[200][4];
+extern int attemptCount;
+
 #endif
