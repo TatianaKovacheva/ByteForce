@@ -60,3 +60,28 @@ void calculateCategoryTotals(int totalObtained[4], int totalMax[4]) {
 double roundToTwoDigits(double value) {
     return (int)(value * 100 + 0.5) / 100.0;
 }
+
+void printResultsTable() {
+    cout << "\nTEST RESULTS TABLE\n";
+    cout << "------------------------------------------------------------------------------------------------\n";
+    cout << left
+        << setw(5) << "No."
+        << setw(24) << "Student"
+        << setw(12) << "Score"
+        << setw(12) << "Max"
+        << setw(14) << "Percent(%)"
+        << setw(10) << "Grade" << "\n";
+    cout << "------------------------------------------------------------------------------------------------\n";
+
+    for (int i = 0; i < attemptCount; i++) {
+        cout << left
+            << setw(5) << (i + 1)
+            << setw(24) << attemptStudentName[i]
+            << setw(12) << attemptScore[i]
+            << setw(12) << attemptMaxScore[i]
+            << setw(14) << roundToTwoDigits(attemptPercent[i])
+            << setw(10) << attemptGrade[i] << "\n";
+    }
+
+    cout << "------------------------------------------------------------------------------------------------\n";
+}
