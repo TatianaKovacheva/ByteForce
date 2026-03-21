@@ -83,3 +83,27 @@ void showItems(const string titles[], const string contents[], int count, string
     }
 }
 
+void showLearningContent() {
+    bool inModule = true;
+    while (inModule) {
+        clearScreen();
+        printLine();
+        cout << "LEARNING CONTENT\n";
+        printLine();
+        for (int i = 0; i < 4; i++) {
+            cout << (i + 1) << ". " << lessonTitles[i] << "\n";
+        }
+        cout << "0. Back to Main Menu\n";
+        cout << "Choose lesson [0-4]: ";
+
+        int choice = readIntInRange(0, 4);
+        if (choice == 0) {
+            inModule = false;
+        }
+        else {
+            clearScreen();
+            showSingleItem(lessonTitles, lessonContents, choice - 1);
+            waitForEnter();
+        }
+    }
+}
