@@ -85,3 +85,33 @@ void printResultsTable() {
 
     cout << "------------------------------------------------------------------------------------------------\n";
 }
+
+void printCategoryStats(int totalObtained[4], int totalMax[4]) {
+    int bestCategory = 0;
+    int worstCategory = 0;
+    double bestCategoryPercent = -1.0;
+    double worstCategoryPercent = 101.0;
+
+    cout << "\nCategory performance:\n";
+
+    for (int c = 0; c < 4; c++) {
+        double categoryPercent = (totalMax[c] == 0)
+            ? 0.0
+            : 100.0 * (double)totalObtained[c] / (double)totalMax[c];
+
+        cout << "- " << categoryNames[c] << ": " << roundToTwoDigits(categoryPercent) << "% ("
+            << totalObtained[c] << "/" << totalMax[c] << ")\n";
+
+        if (categoryPercent > bestCategoryPercent) {
+            bestCategoryPercent = categoryPercent;
+            bestCategory = c;
+        }
+        if (categoryPercent < worstCategoryPercent) {
+            worstCategoryPercent = categoryPercent;
+            worstCategory = c;
+        }
+    }
+
+    cout << "\nHighest category success: " << categoryNames[bestCategory] << " (" << roundToTwoDigits(bestCategoryPercent) << "%)\n";
+    cout << "Lowest category success: " << categoryNames[worstCategory] << " (" << roundToTwoDigits(worstCategoryPercent) << "%)\n";
+}
