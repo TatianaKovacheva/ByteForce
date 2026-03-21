@@ -107,3 +107,28 @@ void showLearningContent() {
         }
     }
 }
+
+void showPracticeTasks() {
+    bool inModule = true;
+    while (inModule) {
+        clearScreen();
+        printLine();
+        cout << "PRACTICE TASKS\n";
+        printLine();
+        for (int i = 0; i < 2; i++) {
+            cout << (i + 1) << ". " << practiceTitles[i] << "\n";
+        }
+        cout << "0. Back to Main Menu\n";
+        cout << "Choose set [0-2]: ";
+
+        int choice = readIntInRange(0, 2);
+        if (choice == 0) {
+            inModule = false;
+        }
+        else {
+            clearScreen();
+            showSingleItem(practiceTitles, practiceContents, choice - 1);
+            waitForEnter();
+        }
+    }
+}
