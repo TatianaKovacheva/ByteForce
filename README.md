@@ -22,8 +22,8 @@
 
 # 🏆 Our Team
 <h3 align=""><big><a href="https://github.com/TatianaKovacheva">Tatiana Kovacheva</a>  - Scrum Trainer</big></h3>
-<h3 align=""><big><a href="https://github.com/PNRusev24">Plamen Rusev</a>  - Front-End Developerr</big></h3>
-<h3 align=""><big><a href="https://github.com/MustafaMustafa25">Mustafa Husein</a> Front-End Developer - </big></h3>
+<h3 align=""><big><a href="https://github.com/PNRusev24">Plamen Rusev</a>  - Front-End Developer</big></h3>
+<h3 align=""><big><a href="https://github.com/MustafaMustafa25">Mustafa Husein</a> - Front-End Developer</big></h3>
 <h3 align=""><big><a href="https://github.com/SAVatansever24">Selin Vatansever</a> - Front-End Developer</big></h3>
 <hr>
 <br>
