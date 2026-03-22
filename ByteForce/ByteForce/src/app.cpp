@@ -132,3 +132,28 @@ void showPracticeTasks() {
         }
     }
 }
+
+void showHomeworkTasks() {
+    bool inModule = true;
+    while (inModule) {
+        clearScreen();
+        printLine();
+        cout << "HOMEWORK TASKS\n";
+        printLine();
+        for (int i = 0; i < 3; i++) {
+            cout << (i + 1) << ". " << homeworkTitles[i] << "\n";
+        }
+        cout << "0. Back to Main Menu\n";
+        cout << "Choose set [0-3]: ";
+
+        int choice = readIntInRange(0, 3);
+        if (choice == 0) {
+            inModule = false;
+        }
+        else {
+            clearScreen();
+            showSingleItem(homeworkTitles, homeworkContents, choice - 1);
+            waitForEnter();
+        }
+    }
+}
