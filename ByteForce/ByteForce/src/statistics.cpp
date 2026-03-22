@@ -145,3 +145,8 @@ void printStatisticsScreen() {
 
     printCategoryStats(totalObtained, totalMax);
 }
+
+void showStatistics() {
+    printStatisticsScreen();
+    waitEnterInStats();
+}
