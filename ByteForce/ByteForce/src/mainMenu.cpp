@@ -6,9 +6,12 @@ void mainMenu() {
     srand((unsigned int)time(0));
     clearScreen();
 
-    cout << "==============================================\n";
-    cout << "   E-SCHOOL: Grade 9 Mathematics Edition\n";
-    cout << "==============================================\n";
+    cout << "**************************************************\n";
+    cout << "*                                                *\n";
+    cout << "*               B Y T E F O R C E                *\n";
+    cout << "*            Grade 9 Mathematics Edition         *\n";
+    cout << "*                                                *\n";
+    cout << "**************************************************\n";
 
     bool running = true;
     while (running) {
