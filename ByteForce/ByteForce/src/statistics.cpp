@@ -115,3 +115,33 @@ void printCategoryStats(int totalObtained[4], int totalMax[4]) {
     cout << "\nHighest category success: " << categoryNames[bestCategory] << " (" << roundToTwoDigits(bestCategoryPercent) << "%)\n";
     cout << "Lowest category success: " << categoryNames[worstCategory] << " (" << roundToTwoDigits(worstCategoryPercent) << "%)\n";
 }
+
+void printStatisticsScreen() {
+    clearScreen();
+    printStatsLine();
+    cout << "STATISTICS\n";
+    printStatsLine();
+
+    if (attemptCount == 0) {
+        cout << "No test attempts yet.\n";
+        return;
+    }
+
+    int bestIndex = findBestStudentIndex();
+    int worstIndex = findWorstStudentIndex();
+    double averagePercent = calculateAveragePercent();
+    int totalObtained[4];
+    int totalMax[4];
+
+    calculateCategoryTotals(totalObtained, totalMax);
+
+    printResultsTable();
+
+    cout << "\nSUMMARY\n";
+    cout << "Best student: " << attemptStudentName[bestIndex] << " (" << roundToTwoDigits(attemptPercent[bestIndex]) << "%)\n";
+    cout << "Lowest student: " << attemptStudentName[worstIndex] << " (" << roundToTwoDigits(attemptPercent[worstIndex]) << "%)\n";
+    cout << "Average result: " << roundToTwoDigits(averagePercent) << "%\n";
+    cout << "Total attempts: " << attemptCount << "\n";
+
+    printCategoryStats(totalObtained, totalMax);
+}
