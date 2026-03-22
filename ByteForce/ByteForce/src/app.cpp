@@ -53,7 +53,12 @@ string readNonEmptyLine(string prompt) {
 void showMainMenu() {
     clearScreen();
     printLine();
-    cout << "E-SCHOOL MAIN MENU\n";
+    cout << "**************************************************\n";
+    cout << "*                                                *\n";
+    cout << "*               B Y T E F O R C E                *\n";
+    cout << "*            Grade 9 Mathematics Edition         *\n";
+    cout << "*                                                *\n";
+    cout << "**************************************************\n";
     printLine();
     cout << "1. Learning Content\n";
     cout << "2. Practice Tasks\n";
