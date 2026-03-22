@@ -159,3 +159,29 @@ void runSingleTestAttempt() {
     printAttemptResult(current);
     waitEnterInTest();
 }
+
+void takeGeneratedTest() {
+    bool inModule = true;
+    while (inModule) {
+        clearScreen();
+        printTestLine();
+        cout << "TEST CENTER\n";
+        printTestLine();
+        cout << "1. Start New Test\n";
+        cout << "2. Show Number of Attempts\n";
+        cout << "0. Back to Main Menu\n";
+        cout << "Choose option [0-2]: ";
+
+        int choice = readIntInRange(0, 2);
+        if (choice == 0) {
+            inModule = false;
+        }
+        else if (choice == 1) {
+            runSingleTestAttempt();
+        }
+        else {
+            cout << "\nSaved attempts: " << attemptCount << "\n";
+            waitEnterInTest();
+        }
+    }
+}
