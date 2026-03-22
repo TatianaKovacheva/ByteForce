@@ -126,3 +126,36 @@ void printAttemptResult(int attemptIndex) {
     cout << "Percent: " << attemptPercent[attemptIndex] << "%\n";
     cout << "Grade (2-6): " << attemptGrade[attemptIndex] << "\n";
 }
+
+void runSingleTestAttempt() {
+    if (!canStartNewAttempt()) {
+        return;
+    }
+
+    clearScreen();
+    printTestLine();
+    cout << "START NEW TEST\n";
+    printTestLine();
+
+    int current = attemptCount;
+    attemptStudentName[current] = readNonEmptyLine("Enter student name: ");
+
+    resetAttemptRow(current);
+
+    int selectedIndexes[20];
+    generateTestQuestionIndexes(selectedIndexes);
+
+    cout << "\nTest has 20 questions. Choose one option (1-4).\n";
+
+    for (int i = 0; i < 20; i++) {
+        int q = selectedIndexes[i];
+        int answer = askSingleQuestion(q, i);
+        processSingleAnswer(current, q, answer);
+    }
+
+    finalizeAttemptResult(current);
+    attemptCount++;
+
+    printAttemptResult(current);
+    waitEnterInTest();
+}
