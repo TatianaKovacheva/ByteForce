@@ -113,6 +113,6 @@ byteforce.exe
 | Name | Role |
 |---|---|
 | [Tatiana Kovacheva](https://github.com/TatianaKovacheva) | Scrum Trainer |
-| [Plamen Rusev](https://github.com/PNRusev24) | Front-End Developer / Designer |
-| [Mustafa Husein](https://github.com/MustafaMustafa25) | Front-End Developer |
-| [Selin Vatansever](https://github.com/SAVatansever24) | Front-End Developer |
+| [Plamen Rusev](https://github.com/PNRusev24) | Front-End Developer |
+| [Mustafa Husein](https://github.com/MustafaMustafa25) | Back-End Developer |
+| [Selin Vatansever](https://github.com/SAVatansever24) | Designer |
