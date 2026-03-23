@@ -1,8 +1,9 @@
 # ByteForce — Grade 9 Mathematics E-School
 
-> A console-based interactive e-school for Grade 9 Mathematics, built in C++17.
-
----
+<p align="center">
+  <img src="https://github.com/TatianaKovacheva/ByteForce/blob/41956842161115861240b408db593e206a33ebed/assets/ByteForce-logo.png?raw=true" 
+       alt="ByteForce Logo" width="400" />
+</p>
 
 ## 📑 Table of Contents
 
